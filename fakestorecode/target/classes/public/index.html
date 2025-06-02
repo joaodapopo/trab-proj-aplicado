@@ -100,7 +100,7 @@
     <div id="products" class="product-grid"></div>
 
     <script>
-      fetch('http://localhost:4567/api/products')
+      fetch('https://fakestoreapi.com/products')
         .then((response) => response.json())
         .then((products) => {
           const container = document.getElementById('products');

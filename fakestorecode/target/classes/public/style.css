@@ -28,8 +28,20 @@ html {
     scroll-behavior: smooth;
 }
 
-.botaoAddCart {
-    padding-top: 5px;
+.botaoAddCart button{
+
+    border: none;
+    color: #f7f7f6; 
+    background-color: #78350f;
+    padding: 10px 15px;
+    text-align:center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    font-family: 'Jacques Francois', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .invisivel-funciona {
@@ -356,6 +368,193 @@ a {
     text-decoration: underline;
 }
 
+.size-options {
+    display: flex; 
+    gap: 10px;     
+    margin-top: 5px; 
+    margin-bottom: 15px;
+}
+
+.size-box {
+    border: 1px solid #cccccc; 
+    padding: 8px 12px;        
+    font-family: 'Inter', sans-serif; 
+    font-size: 0.9em;
+    color: #333333;           
+    text-align: center;
+    cursor: pointer;            
+    background-color: #ffffff;         
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.size-box:hover {
+    border-color: #78350f; 
+    background-color: #fdf7f3; 
+}
+
+.size-box.selected { 
+    background-color: #78350f; 
+    color: #ffffff;            
+    border-color: #78350f;     
+}
+.quantity-buy-group {
+    display: inline-flex; 
+    align-items: stretch; 
+    margin-top: 20px;     
+    margin-bottom: 20px;   
+    overflow: hidden;     
+    border: 1px solid #78350f; 
+}
+
+.quantity-selector-actual {
+    display: flex;
+    align-items: stretch; 
+}
+
+.quantity-buy-group .quantity-btn,
+.quantity-buy-group .quantity-value-display,
+.quantity-buy-group .comprar-btn-unified {
+    background-color: #78350f; 
+    color: #f7f7f6;             
+    border: none;               
+    padding: 10px 0;            
+    font-family: 'Jacques Francois', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-buy-group .quantity-btn {
+    padding-left: 15px;  
+    padding-right: 15px;
+}
+.quantity-buy-group .quantity-btn:hover {
+    background-color: #5a3b1e; 
+}
+
+.quantity-buy-group .quantity-value-display {
+    padding-left: 20px; 
+    padding-right: 20px; 
+    min-width: 30px;     
+    cursor: default;     
+    border-left: 1px solid #5a3b1e;
+}
+
+.quantity-buy-group .comprar-btn-unified {
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: bold;
+    border-left: 1px solid #5a3b1e;
+}
+.quantity-buy-group .comprar-btn-unified:hover {
+    background-color: #5a3b1e; 
+}
+
+.quantity-buy-group .quantity-btn,
+.quantity-buy-group .quantity-value-display,
+.quantity-buy-group .comprar-btn-unified {
+    border-radius: 0; 
+}
+
+/* Container principal da página de detalhes do produto (o div#produto) */
+#produto {
+    max-width: 1100px; /* Defina uma largura máxima para o seu conteúdo. Ajuste este valor conforme necessário. */
+    margin-left: auto;   /* Margem automática à esquerda */
+    margin-right: auto;  /* Margem automática à direita */
+    padding: 20px;       /* Seu padding existente */
+    /* Opcional: um pouco de margem no topo e embaixo para não colar no header/footer */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.product-detail-layout {
+    display: flex;
+    gap: 30px; /* Espaço entre a imagem e o bloco de informações */
+    align-items: flex-start; /* Alinha os itens no topo, caso tenham alturas diferentes */
+}
+
+.product-image-container {
+    flex: 1 1 40%; /* Permite que cresça/encolha, base de 40% da largura */
+    /* Ou você pode usar uma largura fixa se preferir, ex: flex-basis: 300px; */
+}
+
+.product-info-container {
+    flex: 1 1 55%; /* Permite que cresça/encolha, base de 55% da largura */
+    display: flex;
+    flex-direction: column; /* Empilha os itens de informação verticalmente */
+    gap: 10px; /* Espaço entre os elementos de informação (título, preço, etc.) */
+}
+
+/* Estilizando o título do produto */
+.product-info-container h1 {
+    font-family: 'Jacques Francois', serif;
+    font-size: 2.2em; /* Tamanho maior para o título */
+    color: #333; /* Cor mais escura para o título */
+    margin-bottom: 5px; /* Pequeno espaço abaixo do título */
+    line-height: 1.2;
+}
+
+/* Estilizando o preço do produto */
+.product-info-container .product-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8em; /* Tamanho destacado para o preço */
+    color: #78350f; /* Cor marrom do seu tema */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilizando o texto de desconto */
+.product-info-container .produto-discount {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    color: #555; /* Um cinza para o texto de desconto */
+    margin-bottom: 15px; /* Mais espaço abaixo do desconto antes dos tamanhos */
+}
+
+/* Label "Tamanho:" */
+.product-info-container .size-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px; /* Espaço antes das opções de tamanho */
+}
+
+/* Ajustes de margem para os grupos de opções */
+.product-info-container .size-options {
+    margin-bottom: 20px; /* Espaço depois das opções de tamanho */
+}
+
+.product-info-container .quantity-buy-group {
+    margin-top: 10px; /* Espaço antes do grupo de quantidade/comprar */
+}
+
+@media (max-width: 768px) {
+    .product-detail-layout {
+        flex-direction: column; /* Imagem acima das informações em telas pequenas */
+        align-items: center; /* Centraliza a imagem */
+    }
+
+    .product-image-container,
+    .product-info-container {
+        flex-basis: 100%; /* Ocupam toda a largura */
+        width: 100%;
+    }
+
+    .product-image-container {
+        margin-bottom: 20px;
+        max-width: 350px; /* Limita o tamanho da imagem em telas pequenas */
+    }
+
+    .product-info-container h1 {
+        font-size: 1.8em;
+    }
+    .product-info-container .product-price {
+        font-size: 1.5em;
+    }
+}
 /* Rodapé */
 .footer-text {
     margin-top: 3rem;
@@ -363,6 +562,7 @@ a {
     font-size: 1.25rem;
     text-align: center;
 }
+
 
 /* Responsivo */
 @media (max-width: 768px) {
